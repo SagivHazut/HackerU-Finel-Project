@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import apple from "../assets/applelogo.png";
+import NikeLogo from "../assets/nikelogo.png";
 import { toast } from "react-toastify";
 
 const SignupPage = () => {
@@ -45,7 +45,10 @@ const SignupPage = () => {
         <form onSubmit={handleSignup}>
           <br />
           <div className="fadeIn first">
-            <img src={apple} id="icon" alt="" />
+            <img src={NikeLogo} id="icon" alt="" />
+            <h4>
+              YOUR ACCOUNT FOR <br /> EVERYTHING NIKE
+            </h4>
           </div>
           <br />
           <div className="mb-3">
@@ -63,7 +66,7 @@ const SignupPage = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
+            <label htmlFor="exampleInputEmail1" Name="form-label">
               Email address
             </label>
             <input

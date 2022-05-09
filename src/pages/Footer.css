@@ -1,24 +1,20 @@
 .footer {
-  background-color: #eeeaea;
-  width: 90%;
+  background-color: black;
+  width: 100%;
   margin: 0 auto;
-  text-align: center;
   justify-content: bottom;
   position: relative;
   margin-top: 5%;
+  color: white;
 }
 .footer img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin: 5px;
-}
-.logos img {
-  width: 30px;
-  height: 30px;
-  justify-items: center;
-  margin: 10px;
+  border-radius: 40%;
+  background-color: gray;
 }
 .contact a {
   font-size: 1.3em;
-  color: black;
+  color: white;
 }

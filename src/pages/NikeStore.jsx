@@ -1,12 +1,11 @@
 import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
-import CardsPanelPage from "./CardsPanelPage";
 export const NikeStore = () => {
   return (
     <Fragment>
-      <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid justify-content-center">
-          <ul class="navbar-nav mr-auto">
+      <nav className="navbar navbar-expand-lg navbar-light ">
+        <div className="container-fluid justify-content-center">
+          <ul className="navbar-nav mr-auto">
             <NavLink
               className="nav-link"
               aria-current="page"

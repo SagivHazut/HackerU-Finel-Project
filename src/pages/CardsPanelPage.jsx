@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import CardUpdate from "./CardUpdate";
 import { NikeStore } from "./NikeStore";
 
-const CardsPanelPage = () => {
+const CardsPanelPage = (props, onAddToCart) => {
   const history = useHistory();
 
   const URL = "http://localhost:8181/api/cards/";
@@ -72,6 +72,7 @@ const CardsPanelPage = () => {
                 userIDLoggedIn={userInfoRedux._id}
                 onDeleteCard={() => handleDeleteCard(item._id)}
                 onEditCard={handleEditUser}
+                onAddToCart={onAddToCart}
               />
 
               {userInfoRedux._id === item.userID &&

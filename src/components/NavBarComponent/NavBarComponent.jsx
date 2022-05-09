@@ -3,7 +3,8 @@ import "./NavBarComponent.css";
 import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../../store/auth";
 import nikelogo from "../../assets/nikelogo.png";
-
+import { AddShoppingCart } from "@material-ui/icons";
+import { IconButton, Badge } from "@material-ui/core";
 const NavBarComponent = (props) => {
   const dispatch = useDispatch();
 
@@ -30,6 +31,16 @@ const NavBarComponent = (props) => {
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
           {IsloggedInRedux === true ? (
             <ul className="navbar-nav  mb-2 mb-lg-0">
+              <IconButton
+                to="/cart"
+                aria-label="Show cart items"
+                color="inherit"
+                className="cart"
+              >
+                <Badge badgeContent="" color="secondary">
+                  <AddShoppingCart />
+                </Badge>
+              </IconButton>
               <li className="nav-item">
                 <NavLink
                   className="nav-link "

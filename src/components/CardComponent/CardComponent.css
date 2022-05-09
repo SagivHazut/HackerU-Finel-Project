@@ -4,3 +4,7 @@
 .fullcard {
   background-color: gray;
 }
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+}

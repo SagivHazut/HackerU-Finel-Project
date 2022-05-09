@@ -1,7 +1,15 @@
 import "./CardComponent.css";
 import { useSelector } from "react-redux";
-
-const CardComponent = (props) => {
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Typography,
+  IconButton,
+} from "@material-ui/core";
+import { AddShoppingCart } from "@material-ui/icons";
+const CardComponent = (props, onAddToCart) => {
   const IsloggedInRedux = useSelector((state) => state.auth.loggedIn);
 
   const handleDeleteClick = () => {
@@ -11,6 +19,7 @@ const CardComponent = (props) => {
   const handleEditClick = () => {
     props.onEditCard(props.id);
   };
+  const handleAddToCart = () => onAddToCart(props.id, 1);
 
   return (
     <div className="col  ">
@@ -57,7 +66,11 @@ const CardComponent = (props) => {
             </button>
           </div>
         ) : (
-          ""
+          <CardActions disableSpacing>
+            <IconButton aria-label="Add to Cart" onClick={handleAddToCart}>
+              <AddShoppingCart />
+            </IconButton>
+          </CardActions>
         )}
       </div>
     </div>

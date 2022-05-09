@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -8,7 +8,7 @@ import jwt_decode from "jwt-decode";
 import loginSchema from "../validation/login.validation";
 import { authActions } from "../store/auth";
 import "./LoginPage.css";
-import apple from "../assets/applelogo.png";
+import NikeLogo from "../assets/nikelogo.png";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -52,7 +52,7 @@ const LoginPage = () => {
           dispatch(authActions.updateUser(decoded));
           localStorage.setItem("tokenKey", res.data.token);
           if (location.state === null) {
-            history.push("/store");
+            history.push("/CardsPanelPage");
           } else {
             if (location.state.fromPage) {
               history.push(location.state.fromPage);
@@ -94,10 +94,12 @@ const LoginPage = () => {
         <div id="formContent">
           <br />
           <div className="fadeIn first">
-            <img src={apple} id="icon" alt="" />
+            <img src={NikeLogo} id="icon" alt="" />
           </div>
           <br />
-          <h2>Login to your account</h2>
+          <h4>
+            YOUR ACCOUNT FOR <br /> EVERYTHING NIKE
+          </h4>
           <br />
           <div className="box">
             <label htmlFor="email">Email:</label>
