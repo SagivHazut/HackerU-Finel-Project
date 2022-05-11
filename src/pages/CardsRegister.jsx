@@ -10,6 +10,9 @@ const CardRegister = () => {
   const [description, setDescription] = useState("");
   const [phone, setPhone] = useState("");
   const [image, setImage] = useState();
+  const [image1, setImage1] = useState();
+  const [image2, setImage2] = useState();
+  const [image3, setImage3] = useState();
 
   const handleNameChange = (ev) => {
     setName(ev.target.value);
@@ -23,11 +26,28 @@ const CardRegister = () => {
   const handleImageChange = (ev) => {
     setImage(ev.target.value);
   };
+  const handleImageChange1 = (ev) => {
+    setImage1(ev.target.value);
+  };
+  const handleImageChange2 = (ev) => {
+    setImage2(ev.target.value);
+  };
+  const handleImageChange3 = (ev) => {
+    setImage3(ev.target.value);
+  };
 
   const handleSignup = (ev) => {
     ev.preventDefault();
     axios
-      .post("/cards", { name, description, phone, image })
+      .post("/cards", {
+        name,
+        description,
+        phone,
+        image,
+        image1,
+        image2,
+        image3,
+      })
       .then((res) => {
         history.push("/men", { description, phone });
       })
@@ -99,6 +119,48 @@ const CardRegister = () => {
               id="exampleInputImage1"
               onChange={handleImageChange}
               value={image}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputImage1" className="form-label">
+              Image
+            </label>
+            <br />
+            <input
+              type="text"
+              className="form-control"
+              id="exampleInputImage1"
+              onChange={handleImageChange1}
+              value={image1}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputImage1" className="form-label">
+              Image
+            </label>
+            <br />
+            <input
+              type="text"
+              className="form-control"
+              id="exampleInputImage1"
+              onChange={handleImageChange2}
+              value={image2}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputImage1" className="form-label">
+              Image
+            </label>
+            <br />
+            <input
+              type="text"
+              className="form-control"
+              id="exampleInputImage1"
+              onChange={handleImageChange3}
+              value={image3}
               required
             />
           </div>

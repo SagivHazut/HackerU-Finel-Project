@@ -17,6 +17,7 @@ import nikelogo from "../../src/assets/nikelogo.png";
 import womenrun from "../../src/assets/womenrun.jpg";
 import menrun from "../../src/assets/menhomepage.webp";
 import nikelink from "../../src/assets/nikelink.jpg";
+import bgchomevideo from "../../src/assets/Best Day Ever _ Nike.mp4";
 
 const HomePage = () => {
   return (
@@ -26,13 +27,9 @@ const HomePage = () => {
           JUST DO IT. <br /> Nike
         </h1>
         <div class="video-container">
-          <iframe
-            src="https://www.youtube.com/embed/Rm_aiDpkGmQ?rel=0&amp;loop=1&amp;autoplay=1&amp;showsearch=0&amp;version=3&amp;showinfo=0&amp;modestbranding=1&amp;fs=1"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <video className="homevideoTag" autoPlay loop muted>
+            <source src={bgchomevideo} type="video/mp4" />
+          </video>
         </div>
       </div>
       <br />

@@ -1,52 +1,71 @@
 import { Fragment } from "react";
 import "./Aboutpage.css";
-import appleTeam from "../../src/assets/appleteam.webp";
-import appleItem from "../../src/assets/appleitems.jpg";
+import bgcvideo from "../../src/assets/Nike_ What's Your Motivation_.mp4";
+import runners from "../../src/assets/Nike-Eliud-About-Innovation_original.jpg";
+import sociel from "../../src/assets/About-Nike-Community-Made-to-Play_original.jpg";
+import ourteam from "../../src/assets/About-Nike-Team_original.jpg";
 const AboutPage = () => {
   return (
     <Fragment>
-      <div className="topdiv">
-        <h1>Apple makes business better.</h1>
-        <p>
-          Apple hardware, software, and services work together to give your
-          employees the power and flexibility to do whatever needs doing —
-          whether you’re running a startup, scale-up, or global enterprise.
-        </p>
-        <img src={appleTeam} alt="" />
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="animate-charcter">
+            <h1> OUR MISSION:</h1> BRING INSPIRATION AND INNOVATION <br />
+            TO EVERY ATHLETE* <br /> IN THE WORLD <br /> *IF YOU HAVE A BODY,
+            YOU ARE AN ATHLETE.
+          </p>
+          <div className="topdiv">
+            <video className="videoTag" autoPlay loop muted>
+              <source src={bgcvideo} type="video/mp4" />
+            </video>
+          </div>
+        </div>
       </div>
-      <br />
-      <div className="P">
-        An apple is an edible fruit produced by an apple tree (Malus domestica).
-        Apple trees are cultivated worldwide and are the most widely grown
-        species in the genus Malus. The tree originated in Central Asia, where
-        its wild ancestor, Malus sieversii, is still found today. Apples have
-        been grown for thousands of years in Asia and Europe and were brought to
-        North America by European colonists. Apples have religious and
-        mythological significance in many cultures, including Norse, Greek, and
-        European Christian tradition. Apples grown from seed tend to be very
-        different from those of their parents, and the resultant fruit
-        frequently lacks desired characteristics. Generally, apple cultivars are
-        propagated by clonal grafting onto rootstocks. Apple trees grown without
-        rootstocks tend to be larger and much slower to fruit after planting.
-        Rootstocks are used to control the speed of growth and the size of the
-        resulting tree, allowing for easier harvesting. There are more than
-        7,500 known cultivars of apples. Different cultivars are bred for
-        various tastes and uses, including cooking, eating raw, and cider
-        production. Trees and fruit are prone to a number of fungal, bacterial,
-        and pest problems, which can be controlled by a number of organic and
-        non-organic means. In 2010, the fruit's genome was sequenced as part of
-        research on disease control and selective breeding in apple production.
-        Worldwide production of apples in 2018 was 86 million tonnes, with China
-        accounting for nearly half of the total.
-      </div>
-      <br />
-      <div className="middiv">
-        <h1>
-          The easy way for small businesses to manage every aspect of their
-          Apple devices.
-        </h1>
 
-        <img src={appleItem} alt="" />
+      <div className="aboutnike">
+        <h1>ABOUT NIKE</h1>
+        <p>
+          Our mission is what drives us to do everything possible to expand
+          human potential. We do that by creating groundbreaking sport
+          innovations, by making our products more sustainably, by building a
+          creative and diverse global team and by making a positive impact in
+          communities where we live and work. <br /> Based in Beaverton, Oregon,
+          NIKE, Inc. includes the Nike, Converse, and Jordan brands.
+        </p>
+      </div>
+      <div className="innvoation">
+        <h2 style={{ textAlign: "center" }}>INNVOATION</h2>
+        <hr />
+        <h5 style={{ textAlign: "center" }}>
+          WE DARE TO DESIGN THE FUTURE OF SPORT
+        </h5>
+
+        <div className="paragraph">
+          <p>To make big leaps, we take big risks.</p>
+        </div>
+        <img src={runners} alt="" />
+      </div>
+      <div className="our-team">
+        <h2 style={{ textAlign: "center" }}>OUR TEAM</h2>
+        <hr />
+        <h5 style={{ textAlign: "left", marginLeft: "20%" }}>
+          A TEAM THAT'S EMPOWERD, DIVERSE AND INCLUSIVE
+        </h5>
+
+        <div className="paragraph1">
+          <p>A love of sport unites us.</p>
+        </div>
+        <img src={ourteam} alt="" />
+      </div>
+      <div className="social">
+        <h2 style={{ textAlign: "center" }}>SOCIAL & COMMUNITY IMPACT</h2>
+        <hr />
+        <h5 style={{ textAlign: "center" }}>THE WORLD IS OUR COMMUNITY</h5>
+
+        <div className="paragraph">
+          <p>We belive in the power of sport to move the world.</p>
+        </div>
+        <img src={sociel} alt="" />
       </div>
     </Fragment>
   );

@@ -5,14 +5,15 @@ import CardComponent from "../components/CardComponent/CardComponent";
 import { useHistory } from "react-router-dom";
 import CardUpdate from "./CardUpdate";
 import { NikeStore } from "./NikeStore";
-
-const CardsPanelPage = (props, onAddToCart) => {
+import Basket from "./Basket";
+const CardsPanelPage = () => {
   const history = useHistory();
 
-  const URL = "http://localhost:8181/api/cards/";
+  const URL = "http://localhost:8181/api/";
   const userInfoRedux = useSelector((state) => state.auth.userData);
   const [cardsArr, setCardsArr] = useState([]);
   const IsloggedInRedux = useSelector((state) => state.auth.loggedIn);
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     axios
@@ -49,7 +50,18 @@ const CardsPanelPage = (props, onAddToCart) => {
       setCardsArr(newCardsArr);
     });
   };
-
+  const handleAddToCart = (item) => {
+    const exist = cartItems.find((x) => x._id === item.id);
+    if (exist) {
+      setCartItems(
+        cartItems.map((x) =>
+          x._id === item.id ? { ...exist, qty: exist.qty + 1 } : x
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...item, qty: 1 }]);
+    }
+  };
   return (
     <div>
       <NikeStore></NikeStore>
@@ -68,11 +80,14 @@ const CardsPanelPage = (props, onAddToCart) => {
                 description={item.description}
                 phone={item.phone}
                 image={item.image}
+                image1={item.image1}
+                image2={item.image2}
+                image3={item.image3}
                 userIDCard={item.userID}
                 userIDLoggedIn={userInfoRedux._id}
                 onDeleteCard={() => handleDeleteCard(item._id)}
                 onEditCard={handleEditUser}
-                onAddToCart={onAddToCart}
+                onAddToCart={handleAddToCart}
               />
 
               {userInfoRedux._id === item.userID &&
@@ -107,6 +122,7 @@ const CardsPanelPage = (props, onAddToCart) => {
           Add a New Card
         </button>
       )}
+      <Basket onAddToCart={handleAddToCart} cartItems={cartItems}></Basket>
     </div>
   );
 };

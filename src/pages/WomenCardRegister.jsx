@@ -3,13 +3,16 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const WomenCardRegister = () => {
+const CardRegister = () => {
   const history = useHistory();
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [phone, setPhone] = useState("");
   const [image, setImage] = useState();
+  const [image1, setImage1] = useState();
+  const [image2, setImage2] = useState();
+  const [image3, setImage3] = useState();
 
   const handleNameChange = (ev) => {
     setName(ev.target.value);
@@ -23,11 +26,28 @@ const WomenCardRegister = () => {
   const handleImageChange = (ev) => {
     setImage(ev.target.value);
   };
+  const handleImageChange1 = (ev) => {
+    setImage1(ev.target.value);
+  };
+  const handleImageChange2 = (ev) => {
+    setImage2(ev.target.value);
+  };
+  const handleImageChange3 = (ev) => {
+    setImage3(ev.target.value);
+  };
 
   const handleSignup = (ev) => {
     ev.preventDefault();
     axios
-      .post("/womenCard", { name, description, phone, image })
+      .post("/womencard", {
+        name,
+        description,
+        phone,
+        image,
+        image1,
+        image2,
+        image3,
+      })
       .then((res) => {
         history.push("/women", { description, phone });
       })
@@ -102,6 +122,48 @@ const WomenCardRegister = () => {
               required
             />
           </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputImage1" className="form-label">
+              Image
+            </label>
+            <br />
+            <input
+              type="text"
+              className="form-control"
+              id="exampleInputImage1"
+              onChange={handleImageChange1}
+              value={image1}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputImage1" className="form-label">
+              Image
+            </label>
+            <br />
+            <input
+              type="text"
+              className="form-control"
+              id="exampleInputImage1"
+              onChange={handleImageChange2}
+              value={image2}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="exampleInputImage1" className="form-label">
+              Image
+            </label>
+            <br />
+            <input
+              type="text"
+              className="form-control"
+              id="exampleInputImage1"
+              onChange={handleImageChange3}
+              value={image3}
+              required
+            />
+          </div>
 
           <button type="submit" className="btn btn-danger">
             Create a New Card
@@ -114,4 +176,4 @@ const WomenCardRegister = () => {
   );
 };
 
-export default WomenCardRegister;
+export default CardRegister;

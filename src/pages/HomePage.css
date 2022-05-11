@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Roboto:ital,wght@1,900&display=swap");
-iframe {
-  top: 50%;
-  left: 50%;
-  width: 90vw;
-  height: 80vh;
+.homevideoTag {
+  width: 90%;
+  height: 90%;
 }
+
 .nike {
   text-align: center;
   background-color: #fafafa;
@@ -94,7 +93,7 @@ iframe {
 }
 .colliction .men {
   position: absolute;
-  margin-top: -6%;
+  margin-top: -9%;
   margin-left: 52%;
   color: rgb(252, 0, 0);
   font-size: 3em;

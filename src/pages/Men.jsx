@@ -68,6 +68,9 @@ const MenStore = () => {
                 description={item.description}
                 phone={item.phone}
                 image={item.image}
+                image1={item.image1}
+                image2={item.image2}
+                image3={item.image3}
                 userIDCard={item.userID}
                 userIDLoggedIn={userInfoRedux._id}
                 onDeleteCard={() => handleDeleteCard(item._id)}

@@ -29,94 +29,96 @@ const NavBarComponent = (props) => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
-          {IsloggedInRedux === true ? (
-            <ul className="navbar-nav  mb-2 mb-lg-0">
-              <IconButton
-                to="/cart"
-                aria-label="Show cart items"
-                color="inherit"
-                className="cart"
+          <ul className="navbar-nav justify-content-end me-auto mb-2 mb-lg-0">
+            <NavLink
+              className="nav-link"
+              aria-current="page"
+              to="/home"
+              activeClassName="activeLink"
+            >
+              <img
+                src={nikelogo}
+                alt="nikelogo"
+                style={{ width: "30px", height: "30px" }}
+              />
+              Nike{" "}
+            </NavLink>
+
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                aria-current="page"
+                to="/aboutpage"
+                activeClassName="activeLink"
               >
-                <Badge badgeContent="" color="secondary">
-                  <AddShoppingCart />
-                </Badge>
-              </IconButton>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link "
-                  aria-current="page"
-                  to="/login"
-                  activeClassName="activeLink"
-                  onClick={logout}
-                >
-                  יציאה
-                </NavLink>
-              </li>
-            </ul>
-          ) : (
-            <ul className="navbar-nav  mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link "
-                  aria-current="page"
-                  to="/login"
-                  activeClassName="activeLink"
-                >
-                  כניסה
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link"
-                  aria-current="page"
-                  to="/signup"
-                  activeClassName="activeLink"
-                >
-                  הרשמה
-                </NavLink>
-              </li>
-            </ul>
-          )}
+                About Us{" "}
+              </NavLink>
+            </li>
+            <NavLink
+              className="nav-link"
+              aria-current="page"
+              to="/CardsPanelPage"
+              activeClassName="activeLink"
+            >
+              Store{" "}
+            </NavLink>
+            <li className="nav-item"></li>
+          </ul>
+
           <div
             class="collapse navbar-collapse justify-content-end"
             id="navbarSupportedContent"
           >
             <div className="navbar-nav justify-content-end mb-2 mb-lg-0">
-              <ul className="navbar-nav justify-content-end me-auto mb-2 mb-lg-0">
-                <NavLink
-                  className="nav-link"
-                  aria-current="page"
-                  to="/CardsPanelPage"
-                  activeClassName="activeLink"
-                >
-                  חנות
-                </NavLink>
-                <li className="nav-item">
-                  <NavLink
-                    className="nav-link"
-                    aria-current="page"
-                    to="/aboutpage"
-                    activeClassName="activeLink"
+              {" "}
+              {IsloggedInRedux === true ? (
+                <ul className="navbar-nav  mb-2 mb-lg-0">
+                  <IconButton
+                    to="/cart"
+                    aria-label="Show cart items"
+                    color="inherit"
+                    className="cart"
                   >
-                    אודות
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                    className="nav-link"
-                    aria-current="page"
-                    to="/home"
-                    activeClassName="activeLink"
-                  >
-                    Nike{" "}
-                    <img
-                      src={nikelogo}
-                      alt="nikelogo"
-                      style={{ width: "30px", height: "30px" }}
-                    />
-                  </NavLink>
-                </li>
-              </ul>
+                    <Badge badgeContent="" color="secondary">
+                      <AddShoppingCart />
+                    </Badge>
+                  </IconButton>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link "
+                      aria-current="page"
+                      to="/login"
+                      activeClassName="activeLink"
+                      onClick={logout}
+                    >
+                      Logout{" "}
+                    </NavLink>
+                  </li>
+                </ul>
+              ) : (
+                <ul className="navbar-nav  mb-2 mb-lg-0">
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link "
+                      aria-current="page"
+                      to="/login"
+                      activeClassName="activeLink"
+                    >
+                      Login{" "}
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link"
+                      aria-current="page"
+                      to="/signup"
+                      activeClassName="activeLink"
+                    >
+                      Sign Up{" "}
+                    </NavLink>
+                  </li>
+                </ul>
+              )}
             </div>
           </div>
         </div>

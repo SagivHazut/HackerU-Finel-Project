@@ -12,7 +12,7 @@ export const NikeStore = () => {
               to="/women"
               activeClassName="activeLink"
             >
-              נשים
+              Women
             </NavLink>
             <NavLink
               className="nav-link"
@@ -20,7 +20,7 @@ export const NikeStore = () => {
               to="/men"
               activeClassName="activeLink"
             >
-              גברים
+              Men
             </NavLink>
           </ul>
         </div>

@@ -18,6 +18,7 @@ import AboutPage from "./pages/Aboutpage";
 import Footer from "./pages/Footer";
 import CardUpdate from "./pages/CardUpdate";
 import { NikeStore } from "./pages/NikeStore";
+import Basket from "./pages/Basket";
 const SignupPage = React.lazy(() => import("./pages/SignupPage"));
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Redirect to="/home" />
           </Route>
           <Route path="/home" component={HomePage} />
+          <Route path="/basket" component={Basket} />
           <AuthRegister path="/login" component={LoginPage} />
           <AuthRegister path="/signup" component={SignupPage} />
           <AuthGuardRoute path="/cardregister" component={CardRegister} />
