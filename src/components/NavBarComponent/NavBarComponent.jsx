@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { authActions } from "../../store/auth";
 import nikelogo from "../../assets/nikelogo.png";
 import { AddShoppingCart } from "@material-ui/icons";
+import { FavoriteBorder } from "@material-ui/icons";
 import { IconButton, Badge } from "@material-ui/core";
 const NavBarComponent = (props) => {
   const dispatch = useDispatch();
@@ -70,7 +71,34 @@ const NavBarComponent = (props) => {
             id="navbarSupportedContent"
           >
             <div className="navbar-nav justify-content-end mb-2 mb-lg-0">
-              {" "}
+              <IconButton
+                style={{
+                  marginRight: "2%",
+                  marginTop: "-1%",
+                }}
+                to="/cart"
+                aria-label="Show cart items"
+                color="inherit"
+                className="cart"
+              >
+                <Badge badgeContent="" color="inherit"></Badge>
+                <FavoriteBorder
+                  style={{
+                    width: "100%",
+                    height: "20px",
+                  }}
+                />
+              </IconButton>
+              <input
+                class="form-control mr-sm-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
+                Search
+              </button>
+
               {IsloggedInRedux === true ? (
                 <ul className="navbar-nav  mb-2 mb-lg-0">
                   <IconButton

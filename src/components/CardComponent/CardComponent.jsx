@@ -1,9 +1,11 @@
 import "./CardComponent.css";
 import { useSelector } from "react-redux";
-import { CardActions, IconButton } from "@material-ui/core";
+import { CardActions, IconButton, Badge } from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import { FavoriteBorder } from "@material-ui/icons";
+
 const CardComponent = (props) => {
   const IsloggedInRedux = useSelector((state) => state.auth.loggedIn);
   const handleDeleteClick = () => {
@@ -94,10 +96,29 @@ const CardComponent = (props) => {
       ) : (
         <CardActions
           disableSpacing
-          style={{ justifyContent: "center", display: "flex" }}
+          style={{
+            justifyContent: "space-between",
+            margin: "0 auto",
+            width: "50%",
+            display: "flex",
+          }}
+          color="inherit"
         >
-          <IconButton aria-label="Add to Cart" onClick={handleAddToCart}>
+          <IconButton
+            color="inherit"
+            aria-label="Add to Cart"
+            onClick={handleAddToCart}
+          >
             <AddShoppingCart />
+          </IconButton>
+          <IconButton
+            to="/cart"
+            aria-label="Show cart items"
+            color="inherit"
+            className="cart"
+          >
+            <Badge badgeContent="" color="inherit"></Badge>
+            <FavoriteBorder />
           </IconButton>
         </CardActions>
       )}
