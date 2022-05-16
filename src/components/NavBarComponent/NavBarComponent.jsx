@@ -29,7 +29,7 @@ const NavBarComponent = (props) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav justify-content-end me-auto mb-2 mb-lg-0">
             <NavLink
               className="nav-link"
@@ -67,7 +67,7 @@ const NavBarComponent = (props) => {
           </ul>
 
           <div
-            class="collapse navbar-collapse justify-content-end"
+            className="collapse navbar-collapse justify-content-end"
             id="navbarSupportedContent"
           >
             <div className="navbar-nav justify-content-end mb-2 mb-lg-0">
@@ -75,6 +75,7 @@ const NavBarComponent = (props) => {
                 style={{
                   marginRight: "2%",
                   marginTop: "-1%",
+                  height: "10%",
                 }}
                 to="/cart"
                 aria-label="Show cart items"
@@ -89,15 +90,6 @@ const NavBarComponent = (props) => {
                   }}
                 />
               </IconButton>
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
-                Search
-              </button>
 
               {IsloggedInRedux === true ? (
                 <ul className="navbar-nav  mb-2 mb-lg-0">
@@ -137,6 +129,7 @@ const NavBarComponent = (props) => {
                   </li>
                   <li className="nav-item">
                     <NavLink
+                      style={{ width: "80px" }}
                       className="nav-link"
                       aria-current="page"
                       to="/signup"

@@ -5,17 +5,13 @@
   width: 100px;
   text-align: center;
 }
+
 .button {
   direction: rtl;
+  justify-items: center;
+  position: relative;
 }
-.form-control {
-  height: 100%;
-  width: 30%;
-}
-.btn-outline-dark {
-  width: 15%;
-  margin-left: 3px;
-}
+
 @media (max-width: 1024px) {
   .cart {
     width: 10% !important;

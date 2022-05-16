@@ -85,7 +85,7 @@ const CardsPanelPage = () => {
                 image3={item.image3}
                 userIDCard={item.userID}
                 userIDLoggedIn={userInfoRedux._id}
-                onDeleteCard={() => handleDeleteCard(item._id)}
+                onDeleteCard={() => handleDeleteCard(item.id)}
                 onEditCard={handleEditUser}
                 onAddToCart={handleAddToCart}
               />
@@ -122,7 +122,7 @@ const CardsPanelPage = () => {
           Add a New Card
         </button>
       )}
-      <Basket onAddToCart={handleAddToCart} cartItems={cartItems}></Basket>
+      {/* <Basket onAddToCart={handleAddToCart} cartItems={cartItems}></Basket> */}
     </div>
   );
 };

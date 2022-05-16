@@ -19,6 +19,8 @@ import Footer from "./pages/Footer";
 import CardUpdate from "./pages/CardUpdate";
 import { NikeStore } from "./pages/NikeStore";
 import Basket from "./pages/Basket";
+import RestPassword from "./pages/RestPass";
+import ChangePass from "./pages/ChangePass";
 const SignupPage = React.lazy(() => import("./pages/SignupPage"));
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           </Route>
           <Route path="/home" component={HomePage} />
           <Route path="/basket" component={Basket} />
+          <Route path="/changepass" component={ChangePass} />
+          <Route path="/resetpassword" component={RestPassword} />
           <AuthRegister path="/login" component={LoginPage} />
           <AuthRegister path="/signup" component={SignupPage} />
           <AuthGuardRoute path="/cardregister" component={CardRegister} />

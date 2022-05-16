@@ -9,6 +9,8 @@ import loginSchema from "../validation/login.validation";
 import { authActions } from "../store/auth";
 import "./LoginPage.css";
 import NikeLogo from "../assets/nikelogo.png";
+import { NavLink } from "react-router-dom";
+
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -122,6 +124,17 @@ const LoginPage = () => {
               onChange={handlePasswordChange}
               required
             ></input>
+            <br />
+            <br />
+            <NavLink
+              className="nav-link2 "
+              aria-current="page"
+              to="/changepass"
+              activeClassName="activeLink1"
+            >
+              Reset your password
+            </NavLink>
+
             <br />
             <br />
             <button className="btn btn-danger">Log In</button>
